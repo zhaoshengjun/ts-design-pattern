@@ -50,3 +50,9 @@ class RearFacingSeats extends CarOptions {
     return this.decoratedCar.cost() + 7000;
   }
 }
+
+let myTesla = new ModelS();
+myTesla = new RearFacingSeats(myTesla);
+
+console.log(myTesla.getDescription());
+console.log(myTesla.cost());
