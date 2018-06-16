@@ -59,3 +59,33 @@ class PopcornMaker {
     console.log("Popoing corn!");
   }
 }
+
+class HomeTheaterFacade {
+  constructor(
+    public blueray: BluerayPlayer,
+    public amp: Amplifier,
+    public light: Light,
+    public tv: TV,
+    public popcornMaker: PopcornMaker
+  ) {}
+
+  public watchMovie() {
+    this.popcornMaker.turnOn();
+    this.popcornMaker.pop();
+
+    this.light.dim();
+    this.tv.turnOn();
+    this.amp.on();
+    this.amp.setSource("blueray");
+    this.amp.setVolume(11);
+    this.blueray.on();
+    this.blueray.play();
+  }
+
+  public endMovie() {
+    this.popcornMaker.turnOff();
+    this.amp.turnOff();
+    this.tv.turnOff();
+    this.blueray.turnOff();
+  }
+}
