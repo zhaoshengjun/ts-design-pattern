@@ -89,3 +89,11 @@ class HomeTheaterFacade {
     this.blueray.turnOff();
   }
 }
+
+let blueray = new BluerayPlayer();
+let amp = new Amplifier();
+let tv = new TV();
+let light = new Light();
+let popcornMaker = new PopcornMaker();
+let homeTheater = new HomeTheaterFacade(blueray, amp, light, tv, popcornMaker);
+homeTheater.watchMovie();
