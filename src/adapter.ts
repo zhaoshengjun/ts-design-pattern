@@ -17,3 +17,16 @@ class GooglePixel implements Android {
     console.log("Using micro USB ...");
   }
 }
+
+class LightningToMicroUSBAdapter implements Android {
+  iphoneDevice: iPhone;
+  constructor(iphone: iPhone) {
+    this.iphoneDevice = iphone;
+  }
+
+  useMicroUSB() {
+    console.log("Want to use micro USB, converting from lightning ...");
+
+    this.iphoneDevice.useLightning();
+  }
+}
