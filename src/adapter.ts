@@ -30,3 +30,8 @@ class LightningToMicroUSBAdapter implements Android {
     this.iphoneDevice.useLightning();
   }
 }
+
+let iphone = new iPhone7();
+let charger = new LightningToMicroUSBAdapter(iphone);
+
+charger.useMicroUSB();
