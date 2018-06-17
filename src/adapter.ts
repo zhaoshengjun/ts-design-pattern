@@ -6,13 +6,13 @@ interface Android {
   useMicroUSB();
 }
 
-class iPhone7 {
-  useLigntning() {
+class iPhone7 implements iPhone {
+  useLightning() {
     console.log("Using lightning port ...");
   }
 }
 
-class GooglePixel {
+class GooglePixel implements Android {
   useMicroUSB() {
     console.log("Using micro USB ...");
   }
