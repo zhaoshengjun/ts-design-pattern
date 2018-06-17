@@ -17,3 +17,28 @@ class Order {
     return this.currentState;
   }
 }
+
+class PaymentPendingState implements State {
+  constructor(public order: Order) {}
+  cancelOrder() {}
+  verifyPayment() {}
+  shipOrder() {}
+}
+class OrderCancelledState implements State {
+  constructor(public order: Order) {}
+  cancelOrder() {}
+  verifyPayment() {}
+  shipOrder() {}
+}
+class OrderPreparedState implements State {
+  constructor(public order: Order) {}
+  cancelOrder() {}
+  verifyPayment() {}
+  shipOrder() {}
+}
+class OrderShippedState implements State {
+  constructor(public order: Order) {}
+  cancelOrder() {}
+  verifyPayment() {}
+  shipOrder() {}
+}
