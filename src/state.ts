@@ -31,9 +31,16 @@ class Order {
 
 class PaymentPendingState implements State {
   constructor(public order: Order) {}
-  cancelOrder() {}
-  verifyPayment() {}
-  shipOrder() {}
+  cancelOrder() {
+    console.log("Cancelling your unpaid order ...");
+  }
+  verifyPayment() {
+    console.log("Payment verified, shipping soon...");
+    this.order.setState(this.order.orderPreparedState);
+  }
+  shipOrder() {
+    console.log("Cannot ship the order when payment is pending ...");
+  }
 }
 class OrderCancelledState implements State {
   constructor(public order: Order) {}
