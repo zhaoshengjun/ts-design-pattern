@@ -7,7 +7,18 @@ interface State {
 
 class Order {
   public currentState: State;
-  constructor() {}
+  public paymentPendingState: State;
+  public orderCancelledState: State;
+  public orderPreparedState: State;
+  public orderShippedState: State;
+  constructor() {
+    this.paymentPendingState = new PaymentPendingState(this);
+    this.orderCancelledState = new OrderCancelledState(this);
+    this.orderPreparedState = new OrderPreparedState(this);
+    this.orderShippedState = new OrderShippedState(this);
+
+    this.setState(this.paymentPendingState);
+  }
 
   public setState(state: State) {
     this.currentState = state;
