@@ -84,3 +84,8 @@ class OrderShippedState implements State {
 let order = new Order();
 
 console.log("order state: ", (<any>order.getState()).constructor.name);
+
+order.getState().shipOrder();
+order.getState().verifyPayment();
+order.getState().shipOrder();
+order.getState().cancelOrder();
