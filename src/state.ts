@@ -80,3 +80,7 @@ class OrderShippedState implements State {
     console.log("Order has already been shipped.");
   }
 }
+
+let order = new Order();
+
+console.log("order state: ", (<any>order.getState()).constructor.name);
