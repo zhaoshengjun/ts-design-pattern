@@ -56,9 +56,17 @@ class OrderCancelledState implements State {
 }
 class OrderPreparedState implements State {
   constructor(public order: Order) {}
-  cancelOrder() {}
-  verifyPayment() {}
-  shipOrder() {}
+  cancelOrder() {
+    console.log("Cancelling your order ...");
+    this.order.setState(this.order.orderCancelledState);
+  }
+  verifyPayment() {
+    console.log("Payment has already been verified.");
+  }
+  shipOrder() {
+    console.log("Shipping your order now ...");
+    this.order.setState(this.order.orderShippedState);
+  }
 }
 class OrderShippedState implements State {
   constructor(public order: Order) {}
