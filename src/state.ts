@@ -70,7 +70,13 @@ class OrderPreparedState implements State {
 }
 class OrderShippedState implements State {
   constructor(public order: Order) {}
-  cancelOrder() {}
-  verifyPayment() {}
-  shipOrder() {}
+  cancelOrder() {
+    console.log("Cannot cancel order, already shipped");
+  }
+  verifyPayment() {
+    console.log("Payment has already been verified.");
+  }
+  shipOrder() {
+    console.log("Order has already been shipped.");
+  }
 }
